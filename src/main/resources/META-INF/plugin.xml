@@ -1,0 +1,15 @@
+<idea-plugin>
+    <id>com.aruisi.bean-collapse</id>
+    <name>Bean Collapse</name>
+    <vendor>zhangmingkai</vendor>
+    <description>This plugin is independently developed to provide a better experience for developers using the Spring framework.
+        It can fold class names decorated with @ Resource and @ Autowired</description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.foldingBuilder language="JAVA" 
+            implementationClass="com.aruisi.beancollapse.BeanCollapseFoldingBuilder"/>
+    </extensions>
+</idea-plugin> 
