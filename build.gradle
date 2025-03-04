@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.16.0'
+}
+
+group 'com.aruisi'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+intellij {
+    version = '2023.1'
+    type = 'IC'
+    plugins = ['java']
+}
+
+patchPluginXml {
+    sinceBuild = "231"
+    untilBuild = "233.*"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+} 
